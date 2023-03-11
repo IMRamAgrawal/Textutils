@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const mystyle = {
@@ -24,8 +25,8 @@ export default function Navbar(props){
 return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light" id="nav" mode={props.mode} style={mystyle}>
            <li className="nav-item">
-    <a className="navbar-brand" style={{padding: '40px',textDecoration:'none', color:'white'}} href="#">{props.title}</a>
-    <a className="nav-link disabled"  style={{padding: '40px',textDecoration:'none', color:'white'}}  href="#">{props.aboutText}</a>
+    <Link className="navbar-brand" style={{padding: '40px',textDecoration:'none', color:'white'}} to="/">Home</Link>
+    <Link className="nav-link disabled"  style={{padding: '40px',textDecoration:'none', color:'white'}}  to="/about">{props.aboutText}</Link>
         </li>
       {/* <div style={{height:'20px',width:'20px',backgroundColor:'red'}}></div> */}
     <button onClick={props.toggleMode} id="Toggle" style={style}>Enable dark mode</button>

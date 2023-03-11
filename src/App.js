@@ -5,6 +5,12 @@ import Textform from './Components/Textform';
 import Alert from './Components/Alert';
 import About from './Components/About';
  import React, {useState} from 'react';
+ import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 // let name = 9;
 function App() {
   const [mode,setMode] = useState("light")
@@ -47,13 +53,20 @@ function App() {
 
   
   return (
-    <>
- <Navbar title="Home" aboutText="About" showAlert={showAlert} mode={mode} toggleMode={toggleMode}/>
- <Alert alert={alert} style={{height:'50px'}}/>
- <Textform showAlert={showAlert}/>
- {/* <About /> */}
- 
-   </>
+    <div>
+  
+     <BrowserRouter>
+     <Navbar title="Home" aboutText="About" showAlert={showAlert} mode={mode} toggleMode={toggleMode}/>
+     <Alert alert={alert} style={{height:'50px'}}/>
+     
+        <Routes>
+         
+         <Route path="/about" element={<About mode={mode}/>} />
+         <Route path="/" element={<Textform mode={mode}/>} />
+       </Routes>
+     </BrowserRouter>
+     </div>
+
   );
 }
 export default App;

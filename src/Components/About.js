@@ -9,8 +9,8 @@ export default function About (props) {
         // backgroundColor: 'black'
   //   })
   const myStyle = {
-    color: props.mode ==='dark'?'white':'red',
-    backgroundColor:props.mode ==='light'?'#042743':'white'
+    color: props.mode ==='dark'?'blue':'black',
+    backgroundColor: props.mode ==='dark'?'#042743':'white'
   }
 
     // const toggleStyle = () =>{
